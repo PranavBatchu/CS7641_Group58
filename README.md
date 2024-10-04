@@ -34,10 +34,10 @@ The dataset provided is from a Kaggle competition so it is already cleaned, well
 ### ML Algorithms/Models Identified
 As a foundational algorithm for binary classification, logistic regression will be employed to predict match outcomes (HomeWin, Draw, AwayWin). This model is straightforward to implement and interpret, making it a suitable choice for initial predictions based on performance metrics and betting odds.
 
-To enhance prediction accuracy, we will utilize a Random Forest Classifie. By aggregating predictions from multiple decision trees, this model can better capture complex patterns in the data and reduce the risk of overfitting, leading to improved generalization on unseen data.
+To enhance prediction accuracy, we will utilize a Random Forest Classifier. By aggregating predictions from multiple decision trees, this model can better capture complex patterns in the data and reduce the risk of overfitting, leading to improved generalization on unseen data.
 
 ### Unsupervised and Supervised Learning Methods Identified
-Even though our data is already labeling, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
+Even though our data is already labeled, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
 
 However, the primary focus of our project will be on supervised learning methods, as our dataset contains labeled outcomes (HomeWin, Draw, AwayWin). By training our models on this labeled data, we can optimize them to make accurate predictions based on input features.
 
