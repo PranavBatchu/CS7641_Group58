@@ -60,3 +60,20 @@ However, the primary focus of our project will be on supervised learning methods
 
 
 ## References
+
+
+
+## Gantt Chart
+
+
+
+## Contribution Table
+
+| Name     | Proposal Contributions |
+|----------|------------------------|
+| Ahaan    |                        |
+| Akshay   |                        |
+| Aryan    |                        |
+| Pranav   |                        |
+| Veer     |                        |
+
