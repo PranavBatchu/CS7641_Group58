@@ -29,6 +29,8 @@ The motivation for this project stems from the growing interest in sports analyt
 ## Methods
 
 ### Data Preprocessing Methods Identified
+The dataset provided is from a Kaggle competition so it is already cleaned, well-formatted, labeled, and split into training/testing subsets. Due to this, we do not see any heavy data preprocessing necessary beyond just parsing the provided csv files.
+
 ### ML Algorithms/Models Identified
 As a foundational algorithm for binary classification, logistic regression will be employed to predict match outcomes (HomeWin, Draw, AwayWin). This model is straightforward to implement and interpret, making it a suitable choice for initial predictions based on performance metrics and betting odds.
 
