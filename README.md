@@ -36,6 +36,8 @@ As a foundational algorithm for binary classification, logistic regression will 
 
 To enhance prediction accuracy, we will utilize a Random Forest Classifier. By aggregating predictions from multiple decision trees, this model can better capture complex patterns in the data and reduce the risk of overfitting, leading to improved generalization on unseen data.
 
+Lastly, we will utilize a Gradient Boosting Classifier. This will help with understanding the relationships between the match features and correcting prior residual errors. It is a method that constructs weak learners in an organized manner, and with specific tuning of hyperparameters it can result in very accurate performance.
+
 ### Unsupervised and Supervised Learning Methods Identified
 Even though our data is already labeled, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
 
