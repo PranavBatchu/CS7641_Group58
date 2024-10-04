@@ -33,3 +33,5 @@ The motivation for this project stems from the growing interest in sports analyt
 ### Unsupervised and Supervised Learning Methods Identified
 Even though our data is already labeling, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
 
+However, the primary focus of our project will be on supervised learning methods, as our dataset contains labeled outcomes (HomeWin, Draw, AwayWin). By training our models on this labeled data, we can optimize them to make accurate predictions based on input features.
+
