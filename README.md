@@ -72,11 +72,11 @@ https://gtvault-my.sharepoint.com/:x:/g/personal/amistry31_gatech_edu/ERdTW3JDGQ
 
 ## Contribution Table
 
-| Name     | Proposal Contributions |
-|----------|------------------------|
-| Ahaan    |                        |
-| Akshay   |                        |
-| Aryan    |                        |
-| Pranav   |                        |
-| Veer     |                        |
+| Name     | Proposal Contributions    |
+|----------|---------------------------|
+| Ahaan    | Introduction & Background |
+| Akshay   | Problem Definition        |
+| Aryan    | Potential Results & Discussion                   |
+| Pranav   | GitHub Page & Gantt Chart|
+| Veer     |   Methods                        |
 
