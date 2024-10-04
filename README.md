@@ -30,6 +30,10 @@ The motivation for this project stems from the growing interest in sports analyt
 
 ### Data Preprocessing Methods Identified
 ### ML Algorithms/Models Identified
+As a foundational algorithm for binary classification, logistic regression will be employed to predict match outcomes (HomeWin, Draw, AwayWin). This model is straightforward to implement and interpret, making it a suitable choice for initial predictions based on performance metrics and betting odds.
+
+To enhance prediction accuracy, we will utilize a Random Forest Classifie. By aggregating predictions from multiple decision trees, this model can better capture complex patterns in the data and reduce the risk of overfitting, leading to improved generalization on unseen data.
+
 ### Unsupervised and Supervised Learning Methods Identified
 Even though our data is already labeling, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
 
