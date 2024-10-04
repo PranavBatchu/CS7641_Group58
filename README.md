@@ -57,3 +57,6 @@ However, the primary focus of our project will be on supervised learning methods
 ### Expected Results
 - With the combination of logistic regression and Random Forest classifiers, we aim to achieve competitive accuracy metrics, with an F1 Score exceeding 0.75 for all classes, demonstrating effective model performance across different outcomes.
 - Through the exploration of clustering methods, we expect to uncover hidden patterns in team performance that could inform strategic betting decisions and enhance our understanding of the underlying factors that influence match outcomes.
+
+
+## References
