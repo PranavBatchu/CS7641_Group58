@@ -67,6 +67,7 @@ However, the primary focus of our project will be on supervised learning methods
 
 ## Gantt Chart
 
+https://gtvault-my.sharepoint.com/:x:/g/personal/amistry31_gatech_edu/ERdTW3JDGQ9NibdAraEwbAIBa_T8pidvcs2EdB4nqX4twg?e=eV1qHs 
 
 
 ## Contribution Table
