@@ -24,3 +24,12 @@ The primary problem we are addressing is the unpredictability and uncertainty as
 
 ### Motivation
 The motivation for this project stems from the growing interest in sports analytics and the potential economic benefits it can bring to both bettors and sports organizations. With the increasing availability of detailed match data, betting odds, and player statistics, machine learning offers a promising avenue to enhance prediction accuracy. By developing a model that effectively analyzes historical soccer match data, we aim to provide a valuable tool for sports bettors, enabling them to make informed decisions based on data rather than intuition. 
+
+
+## Methods
+
+### Data Preprocessing Methods Identified
+### ML Algorithms/Models Identified
+### Unsupervised and Supervised Learning Methods Identified
+Even though our data is already labeling, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
+
