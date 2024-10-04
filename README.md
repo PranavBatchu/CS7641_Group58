@@ -2,6 +2,8 @@
 
 ## Introuction
 
+The problem we are trying ot solve is the unpredictability of sports betting on soccer games. We aim to solve this problem by leveraging ML to create a model that predicts the outcome of soccer matches. Our ultimate goal is that this model will serve as a useful tool for sports betting on soccer.
+
 ### Literature Review
 
 ### Dataset Description
