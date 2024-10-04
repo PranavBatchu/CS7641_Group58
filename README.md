@@ -41,3 +41,16 @@ Even though our data is already labeling, we will explore clustering methods suc
 
 However, the primary focus of our project will be on supervised learning methods, as our dataset contains labeled outcomes (HomeWin, Draw, AwayWin). By training our models on this labeled data, we can optimize them to make accurate predictions based on input features.
 
+
+
+## Potential Results and Discussion
+
+### Quantitative Metrics
+- Accuracy: This metric will measure the overall correctness of our predictions by calculating the ratio of correctly predicted outcomes to the total number of predictions made. It will give us a general sense of how well our models perform across all classes (HomeWin, Draw, AwayWin).
+- Precision and Recall: Precision will help us assess the accuracy of positive predictions (e.g., predicting a HomeWin), while recall will measure the ability of our model to identify all actual positive cases. Both metrics will be critical in understanding the trade-offs between correctly predicting match outcomes and minimizing false positives or negatives.
+- F1 Score: The F1 Score, which is the harmonic mean of precision and recall, will be utilized to balance the trade-off between these two metrics. This will be particularly valuable in scenarios where class distribution is imbalanced, ensuring that our model remains robust in predicting less frequent outcomes.
+
+### Project Goals
+
+### Expected Results
+
