@@ -16,7 +16,6 @@ This dataset contains historical data of soccer matches. Each row represents a u
 https://www.kaggle.com/competitions/prediction-of-results-in-soccer-matches/data  
 
 
-
 ## Problem Definition
 
 ### Problem
