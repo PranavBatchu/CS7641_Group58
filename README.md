@@ -151,6 +151,7 @@ We evaluated the model's performance using the following metrics:
 
 ## Next Steps
 
+Our next steps involve implementing two additional models: one for unsupervised learning, which will be the K-Means clustering algorithm, and one for supervised learning, which will be logistic regression. These models will allow us to expand our analysis and compare performance across different learning approaches.
 
 ## References
 
