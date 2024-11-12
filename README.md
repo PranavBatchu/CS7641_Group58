@@ -30,17 +30,17 @@ The motivation for this project stems from the growing interest in sports analyt
 
 ### Data Preprocessing Methods Implemented
 
+As we mentioned in our proposal, our data was well-formatted, but we further cleaned the dataset by removing null values. We also combined the 3 outcome columns (Home win, Away Win, and Draw) into a single outcome column that we could treat as out target value. Then we dropped the initial 3 columns, and used the 30 final columns as our dataset (with 29 features and 1 target). Another choice we made was to use the standard scaler on our feature columns, as most columns perform better with a standardized dataset. Other than the ID and Outcome columns, each column is normalized to a have a mean of 0 and variance of 1. We also experimented with PCA, which was after iterations of experimenting with models, but we decided to use all dimensions of our data rather than just a few principal components. Finally, we saved this dataset to a new csv.
 
 ### ML Algorithms/Models Implemented
 
+We implemented K-Means as our unsupervised learning method, and Random Forest for our supervised learning method. For this discussion, we will focus on the Random Forest model.
 
-
-### Unsupervised and Supervised Learning Methods Implemented
-
+We decided to work with Random Forest as it is a powerful multiclass classifier that works well with high dimensional data (compared to simpler classifier such as logistic regression). As it is an ensemble learning method, in that is leverages an ensemble of decision trees, it handled our 29 features well to predict the 1 target value of the outcome of the game. We also chose Random Forest due to the flexibility and customizability in its implementation with the libraries that we used, specifically in terms of hyperparameters that we could set. Specifically, we experimented with the max_depth of the trees and the number of decision trees that we were using. By setting these, we could directly control the extent to which the Random Forest classifier was fitting to our data, and viewing the visualizations while adjusting the levels of these hyperparameters helped us determine the best combination for our data (that mitigated both over and under fitting).
 
 ## Results and Discussion
 
-### Visualization Report
+**All charts are on the bottom**
 
 ### 1. Decision Tree Example
 This visualization displays one of the 100 decision trees in our random forest model, an ensemble learning method based on tree structures. By visualizing a single tree, we gain insights into selecting an optimal `max_depth` for the entire forest. The example shown here is limited to a `max_depth` of 7 for readability, helping us observe how decisions are structured within each tree in the forest.
@@ -58,7 +58,7 @@ The confusion matrix visualizes hits and misses between classes, helping us unde
 The classification report presents precision, recall, and F1-score metrics for each class as a heat map. This format allows us to compare key metrics across classes visually, making it easier to identify disparities in performance and areas that may need tuning.
 
 
-### Analysis
+### Analysis of Random Forest
 
 #### Preprocessing
 1. **Standardization**: We standardized the features using `StandardScaler` to ensure that all features have a mean of 0 and a standard deviation of 1. This is crucial for models like SVM which are sensitive to the scale of input data.
@@ -83,9 +83,7 @@ We dropped the following columns from the dataset:
    y = df['Outcome']
    ```
 
-#### Model Used
-We used multiple Random Forest Classifier for prediction:
-1. **Random Forest Classifier**: An ensemble learning method that aggregates predictions from multiple decision trees to improve accuracy and reduce overfitting.
+**Random Forest Classifier**: An ensemble learning method that aggregates predictions from multiple decision trees to improve accuracy and reduce overfitting.
    ```python
    from sklearn.ensemble import RandomForestClassifier
    rf = RandomForestClassifier(n_estimators=200, random_state=42)
@@ -94,7 +92,7 @@ We used multiple Random Forest Classifier for prediction:
    ```
 
 #### Accuracy Check
-We evaluated the model's performance using the following metrics:
+We evaluated the model's performance using the following methods (the metrics are described within the methods):
 1. **Accuracy**: The ratio of correctly predicted instances to the total instances.
    ```python
    from sklearn.metrics import accuracy_score
@@ -107,7 +105,7 @@ We evaluated the model's performance using the following metrics:
    cm = confusion_matrix(y_test, preds)
    ```
 
-3. **Classification Report**: Provides precision, recall, and F1-score for each class.
+3. **Classification Report**: Provides **precision**, **recall**, and **F1-score** for each class.
    ```python
    from sklearn.metrics import classification_report
    class_report = classification_report(y_test, preds)
