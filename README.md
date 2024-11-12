@@ -1,8 +1,8 @@
-# Proposal
+# Midterm Checkpoint
 
 
 
-## Introuction
+## Introduction
 
 The problem we are trying ot solve is the unpredictability of sports betting on soccer games. We aim to solve this problem by leveraging ML to create a model that predicts the outcome of soccer matches. Our ultimate goal is that this model will serve as a useful tool for sports betting on soccer.
 
@@ -28,26 +28,19 @@ The motivation for this project stems from the growing interest in sports analyt
 
 ## Methods
 
-### Data Preprocessing Methods Identified
-The dataset provided is from a Kaggle competition so it is already cleaned, well-formatted, labeled, and split into training/testing subsets. Here are our additional data preprocessing methods. Outlier Detection, for which we will conduct Z-score analysis to identify and handle the outliers. One-Hot Encoding, where we convert categorical variables into binary values for higher model predictability. Normalization to scale the features within a range, we decided to use a generic range of 0 to 1. Binning to convert continuous values to discrete bins to increase correlation between similar data
+### Data Preprocessing Methods Implemented
 
-### ML Algorithms/Models Identified
-Logistic Regression: As a foundational algorithm for binary classification, logistic regression will be employed to predict match outcomes (HomeWin, Draw, AwayWin). This model is straightforward to implement and interpret, making it a suitable choice for initial predictions based on performance metrics and betting odds.
 
-Random Forest Classifier: To enhance prediction accuracy, we will utilize a Random Forest Classifier. By aggregating predictions from multiple decision trees, this model can better capture complex patterns in the data and reduce the risk of overfitting, leading to improved generalization on unseen data.
-
-Gradient Boosting Classifier: Lastly, we will utilize a Gradient Boosting Classifier. This will help with understanding the relationships between the match features and correcting prior residual errors. It is a method that constructs weak learners in an organized manner, and with specific tuning of hyperparameters it can result in very accurate performance.
-
-### Unsupervised and Supervised Learning Methods Identified
-Even though our data is already labeled, we will explore clustering methods such as K-means clustering to identify patterns within teams based on their performance metrics. This unsupervised approach can provide insights into team behavior that may enhance our understanding of match dynamics.
-
-However, the primary focus of our project will be on supervised learning methods, as our dataset contains labeled outcomes (HomeWin, Draw, AwayWin). By training our models on this labeled data, we can optimize them to make accurate predictions based on input features.
+### ML Algorithms/Models Implemented
 
 
 
-# Part 4 - Results and Discussion:
+### Unsupervised and Supervised Learning Methods Implemented
 
-## Visualization Report
+
+## Results and Discussion
+
+### Visualization Report
 
 ### 1. Decision Tree Example
 This visualization displays one of the 100 decision trees in our random forest model, an ensemble learning method based on tree structures. By visualizing a single tree, we gain insights into selecting an optimal `max_depth` for the entire forest. The example shown here is limited to a `max_depth` of 7 for readability, helping us observe how decisions are structured within each tree in the forest.
@@ -63,6 +56,7 @@ The confusion matrix visualizes hits and misses between classes, helping us unde
 
 ### 5. Classification Report
 The classification report presents precision, recall, and F1-score metrics for each class as a heat map. This format allows us to compare key metrics across classes visually, making it easier to identify disparities in performance and areas that may need tuning.
+
 
 ### Analysis
 
@@ -148,6 +142,10 @@ We evaluated the model's performance using the following metrics:
    plt.show()
    ```
 
+### Next Steps
+
+
+
 
 
 ## References
@@ -173,4 +171,3 @@ https://gtvault-my.sharepoint.com/:x:/g/personal/amistry31_gatech_edu/ERdTW3JDGQ
 | Aryan    | Potential Results & Discussion                   |
 | Pranav   | GitHub Page & Gantt Chart|
 | Veer     |   Methods                        |
-
