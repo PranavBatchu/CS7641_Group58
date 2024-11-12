@@ -141,11 +141,15 @@ We evaluated the model's performance using the following metrics:
    plt.ylabel('True Labels')
    plt.show()
    ```
+## Charts
 
-### Next Steps
+![IMG_0172](IMG_0172.png)
+![IMG_0526](IMG_0526.png)
+![IMG_0848](IMG_0848.png)
+![IMG_3488](IMG_3488.png)
+![IMG_8899](IMG_8899.png)
 
-
-
+## Next Steps
 
 
 ## References
