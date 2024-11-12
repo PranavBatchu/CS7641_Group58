@@ -169,8 +169,8 @@ https://gtvault-my.sharepoint.com/:x:/g/personal/amistry31_gatech_edu/ERdTW3JDGQ
 
 | Name     | Proposal Contributions    |
 |----------|---------------------------|
-| Ahaan    | Introduction & Background |
-| Akshay   | Problem Definition        |
-| Aryan    | Potential Results & Discussion                   |
-| Pranav   | GitHub Page & Gantt Chart|
-| Veer     |   Methods                        |
+| Ahaan    | Data Preprocessing + Github Page |
+| Akshay   | Accuracy Metrics + Github Page       |
+| Aryan    | Model Programming + Github Page                  |
+| Pranav   | Model Analysis + Github Page |
+| Veer     | Model Tuning + Github Page                      |
