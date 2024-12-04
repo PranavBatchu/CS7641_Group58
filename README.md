@@ -5,11 +5,17 @@
 Descriptions for the key components of our repository:
 
 **/Supervised/** - Folder for supervised model notebooks + visualizations
+
 **/Supervised/random_forest.ipynb** - Random Forest Classifier notebook
+
 **/Supervised/log_reg.ipynb** - Logistic Regression Classifier notebook
+
 **/data_preprocessing.ipynb** - Data Preprocessing notebook
+
 **/kmeans.ipynb** - K-Means Method notebook
+
 **/train_dataset_preprocessed.csv** - training dataset, produced from data notebook
+
 **/test_dataset_preprocessed.csv** - testing dataset, produced from data notebook 
 
 
