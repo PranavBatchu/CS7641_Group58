@@ -190,6 +190,8 @@ The Precision - Recall (or PR) curve plots the tradeoff between the precision an
 ![IMG_0848](IMG_0848.png)
 ![IMG_3488](IMG_3488.png)
 ![IMG_8899](IMG_8899.png)
+
+### Logistic Regression:
 ![IMG 1](Supervised/Logistic%20Regression%20Visualizations/ClassificationReport.png)
 
 Logistic Regression:
