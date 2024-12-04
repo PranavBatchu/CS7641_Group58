@@ -162,7 +162,80 @@ We evaluated the models' performance using the following methods (the metrics ar
    plt.show()
    ```
 
-### K-Means Analysis: 
+### K-Means Clustering Analysis: 
+
+#### Preprocessing
+- Feature Standardization: To ensure that all features were on a comparable scale, we standardized them using StandardScaler. This was crucial because K-Means clustering relies on Euclidean distance, which is sensitive to feature magnitudes.
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+features = data[['team_b_shots_overall_l4_TSR', 'team_b_shots_average', 'predict_xg_overall_team_b']]
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(features)
+```
+
+- Data Selection: The features chosen for clustering were:
+  
+team_b_shots_overall_l4_TSR (team shooting ratio over last 4 games)
+team_b_shots_average (average shots per game)
+predict_xg_overall_team_b (predicted expected goals)
+
+
+#### Implementation
+- Model Fitting: The K-Means model was set to form three clusters, representing the possible match outcomes: Home Win, Draw, and Away Win.
+
+```python
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=3, random_state=42)
+data['Cluster'] = kmeans.fit_predict(scaled_features)
+```
+
+#### Visualizations
+- 2D Scatter Plot: A scatter plot visualized the clusters in two dimensions. This plot demonstrated how K-Means categorized data points based on the selected features.
+
+```python
+plt.scatter(scaled_features[:, 0], scaled_features[:, 1], c=data['Cluster'], cmap='viridis')
+plt.title('K-Means Clustering (2D)')
+plt.xlabel('team_b_shots_overall_l4_TSR')
+plt.ylabel('team_b_shots_average')
+plt.colorbar(label='Cluster')
+plt.show()
+```
+
+- 3D Scatter Plot: Using all three features, we created a 3D visualization showing the spatial distribution of clusters. Each cluster's centroid was also visualized for better interpretability.
+
+```python
+fig = plt.figure(figsize=(12, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(scaled_features[:, 0], scaled_features[:, 1], scaled_features[:, 2], c=data['Cluster'], cmap='viridis')
+ax.set_title('K-Means Clustering (3D)')
+ax.set_xlabel('team_b_shots_overall_l4_TSR')
+ax.set_ylabel('team_b_shots_average')
+ax.set_zlabel('predict_xg_overall_team_b')
+plt.show()
+```
+
+- Comparison with True Labels: Another 3D scatter plot compared the actual outcomes with the clusters to observe alignment and discrepancies.
+
+```python
+outcome_colors = {0: 'red', 1: 'blue', 2: 'green'}  # Red = Team A win, Blue = Draw, Green = Team B win
+outcome_labels = data['Outcome'].map(outcome_colors)
+fig = plt.figure(figsize=(12, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(scaled_features[:, 0], scaled_features[:, 1], scaled_features[:, 2], c=outcome_labels)
+ax.set_title('Actual Outcomes')
+ax.set_xlabel('team_b_shots_overall_l4_TSR')
+ax.set_ylabel('team_b_shots_average')
+ax.set_zlabel('predict_xg_overall_team_b')
+plt.show()
+```
+
+#### Observations
+- Cluster Patterns: The clustering provided insights into natural groupings in the data, with clusters showing reasonable alignment with match outcomes. While the clusters did not perfectly match the labeled outcomes, they captured significant trends and correlations.
+- Limitations: Some overlaps between clusters highlighted the model's struggle with features that were not clearly separable in Euclidean space.
+
 
 ### Visualizations
 
@@ -204,6 +277,12 @@ The Precision - Recall (or PR) curve plots the tradeoff between the precision an
 ![IMG 1](Supervised/Logistic%20Regression%20Visualizations/PrecisionRecallCurve.png)
 ![IMG 1](Supervised/Logistic%20Regression%20Visualizations/ROCCurve.png)
 ![IMG_0848](IMG_0848.png)
+
+### K-Means Clustering:
+![IMG 1](kmeans/corr_matrix.png)
+![IMG 1](kmeans/kmeans_2_features.png)
+![IMG 1](kmeans/kmeans_3_features.png)
+
 
 
 ## Next Steps
