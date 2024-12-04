@@ -1,8 +1,19 @@
 # Midterm Checkpoint
 
+## GitHub Repository Layout Description
+
+Descriptions for the key components of our repository:
+
+**/Supervised/** - Folder for supervised model notebooks + visualizations
+**/Supervised/random_forest.ipynb** - Random Forest Classifier notebook
+**/Supervised/log_reg.ipynb** - Logistic Regression Classifier notebook
+**/data_preprocessing.ipynb** - Data Preprocessing notebook
+**/kmeans.ipynb** - K-Means Method notebook
+**/train_dataset_preprocessed.csv** - training dataset, produced from data notebook
+**/test_dataset_preprocessed.csv** - testing dataset, produced from data notebook 
 
 
-## Introduction
+## INTRODUCTION
 
 The problem we are trying ot solve is the unpredictability of sports betting on soccer games. We aim to solve this problem by leveraging ML to create a model that predicts the outcome of soccer matches. Our ultimate goal is that this model will serve as a useful tool for sports betting on soccer.
 
@@ -17,7 +28,7 @@ https://www.kaggle.com/competitions/prediction-of-results-in-soccer-matches/data
 
 
 
-## Problem Definition
+## PROBLEM DEFINITION
 
 ### Problem
 The primary problem we are addressing is the unpredictability and uncertainty associated with sports betting on soccer matches. Traditional methods of predicting match outcomes often rely on simplistic heuristics or historical win-loss records, which fail to account for the complex and dynamic nature of soccer games. This unpredictability can lead to substantial financial losses for bettors and may discourage participation in sports betting. As a result, there is a pressing need for a more sophisticated and data-driven approach to accurately forecast match results.
@@ -26,7 +37,7 @@ The primary problem we are addressing is the unpredictability and uncertainty as
 The motivation for this project stems from the growing interest in sports analytics and the potential economic benefits it can bring to both bettors and sports organizations. With the increasing availability of detailed match data, betting odds, and player statistics, machine learning offers a promising avenue to enhance prediction accuracy. By developing a model that effectively analyzes historical soccer match data, we aim to provide a valuable tool for sports bettors, enabling them to make informed decisions based on data rather than intuition. 
 
 
-## Methods
+## METHODS
 
 ### Data Preprocessing Methods Implemented
 
@@ -34,31 +45,22 @@ As we mentioned in our proposal, our data was well-formatted, but we further cle
 
 ### ML Algorithms/Models Implemented
 
-We implemented K-Means as our unsupervised learning method, and Random Forest for our supervised learning method. For this discussion, we will focus on the Random Forest model.
+For our 3 models, we implemented K-Means as our unsupervised learning method, and Random Forest and Logistic Regression for our supervised learning methods. 
 
-We decided to work with Random Forest as it is a powerful multiclass classifier that works well with high dimensional data (compared to simpler classifier such as logistic regression). As it is an ensemble learning method, in that is leverages an ensemble of decision trees, it handled our 29 features well to predict the 1 target value of the outcome of the game. We also chose Random Forest due to the flexibility and customizability in its implementation with the libraries that we used, specifically in terms of hyperparameters that we could set. Specifically, we experimented with the max_depth of the trees and the number of decision trees that we were using. By setting these, we could directly control the extent to which the Random Forest classifier was fitting to our data, and viewing the visualizations while adjusting the levels of these hyperparameters helped us determine the best combination for our data (that mitigated both over and under fitting).
+## RESULTS AND DISCUSSION
 
-## Results and Discussion
+For this final discussion, we will analyze all of these methods:
 
-**All charts are on the bottom**
+1) We decided to work with Random Forest as it is a powerful multiclass classifier that works well with high dimensional data (compared to simpler classifier such as logistic regression). As it is an ensemble learning method, in that is leverages an ensemble of decision trees, it handled our 29 features well to predict the 1 target value of the outcome of the game. We also chose Random Forest due to the flexibility and customizability in its implementation with the libraries that we used, specifically in terms of hyperparameters that we could set. Specifically, we experimented with the max_depth of the trees and the number of decision trees that we were using. By setting these, we could directly control the extent to which the Random Forest classifier was fitting to our data, and viewing the visualizations while adjusting the levels of these hyperparameters helped us determine the best combination for our data (that mitigated both over and under fitting).
+2) We also decided to use Logistic Regression as we were curious what a simpler classifier would do with our high dimensional data. We decided to use an L2 norm for our regularization (or penalty) function. Using ridge regression helped us make sure that coefficients never get set to 0, so that all features can contribute to the final prediction. If we used an L1 norm instead, the coefficients could be set to 0, which would mean that the final prediction would be based on a smaller number of features. The main benefit of using this Logistic Regression model is that we reduce overfitting when compared to Random Forest, as we have a simpler model and also an added benefit of regularization.
+3) 
 
-### 1. Decision Tree Example
-This visualization displays one of the 100 decision trees in our random forest model, an ensemble learning method based on tree structures. By visualizing a single tree, we gain insights into selecting an optimal `max_depth` for the entire forest. The example shown here is limited to a `max_depth` of 7 for readability, helping us observe how decisions are structured within each tree in the forest.
+### Comparison 
+First let's compare the supervised learning methods that we chose: Random Forest and Logistic Regression. Although we obtained similar accuracies on our dataset from both of these models, these models differ in their advantages and disadvantages. Firstly, Random Forest models are complicated and expensive, while Logistic Regression is simple. Related to this, Random Forest is also less interpretable, in that it is difficult to analyze how the features are contributing to the output. On the other hand, Logistic Regression has direct coefficients that explain the relationship between a feature and the target. Also, because Logistic Regression is simple, it is less prone to overfitting. Along with being simple, Logistic Regression combats overfitting with its L1/L2 regularization. Random Forest, especially with an inefficient set of hyperparameters, is prone to overfitting due to improper tuning of factors such as tree depth. 
 
-### 2. Feature Importance
-Feature importance helps us understand the contribution of each feature to the predictions. Scikit-learn’s random forest model inherently stores feature importance scores, as the method assigns weights to each feature based on its impact on decision-making. In our analysis, we identified that the top two features influencing the model were **profit through bets** and **odds to win**. This was intriguing as betting metrics appeared to have the most significant impact on the game’s outcome.
+Now let's compare these 2 supervised methods to the unsupervised method that we chose: K-Means. Firstly, these methods are similar in that they all categorize data into classes; they are all classification methods, even though K-Means utilizes clusters rather than classes. The main difference between these methods is that K-Means clusters without any target variable; it groups based on natural relationships between the features, rather than developing relationships to a target/label. This would mean that K-Means would be suitable in use cases where we have unlabeled data, and it is more appropriate for developing preliminary relationships, patterns, or trends in a dataset. Another difference between these methods is their capabilities of handling non-linear patterns in data. In this factor, K-Means is similar to Logistic Regression in that both of these methods struggle when the data has non-linear relationships. K-Means struggles as the distance formula is Euclidean distance (in 2D), and the clusters are also forced to be circular, while Logistic Regression struggles as the basic assumption is a linear relationship between the features and the log of the target. On the other hand, Random Forest handles non-linear relationships well as it can divide the feature space in many different ways due to how it branches based on features.
 
-### 3. Model Accuracy Bar Graph
-A bar graph displaying model accuracy serves as a straightforward visual of our accuracy metric, which is a single scalar value. This visualization is useful for comparing our model’s accuracy against other models when stacked, providing an intuitive look at overall model performance.
-
-### 4. Confusion Matrix
-The confusion matrix visualizes hits and misses between classes, helping us understand areas where our model performs well and where it may fall short. From this matrix, we noticed that the model perfectly predicts **class 0** features, with no missed predictions—a sign of potential overfitting. Recognizing this pattern allows us to address overfitting in future model iterations.
-
-### 5. Classification Report
-The classification report presents precision, recall, and F1-score metrics for each class as a heat map. This format allows us to compare key metrics across classes visually, making it easier to identify disparities in performance and areas that may need tuning.
-
-
-### Analysis of Random Forest
+### Further Analysis for Preparation of the Supervised Models:
 
 #### Preprocessing
 1. **Standardization**: We standardized the features using `StandardScaler` to ensure that all features have a mean of 0 and a standard deviation of 1. This is crucial for models like SVM which are sensitive to the scale of input data.
@@ -91,8 +93,16 @@ We dropped the following columns from the dataset:
    preds = rf.predict(x_test)
    ```
 
+**Logistic Regression Classifier**: A linear binary classification model that predicts the probability of a data point being in a class.
+   ```python
+   from sklearn.linear_model import LogisticRegression
+   log_reg = LogisticRegression(penalty = 'l2', max_iter=1000, class_weight='balanced')
+   log_reg.fit(x_train, y_train)
+   preds = log_reg.predict(x_test)
+   ```
+
 #### Accuracy Check
-We evaluated the model's performance using the following methods (the metrics are described within the methods):
+We evaluated the models' performance using the following methods (the metrics are described within the methods):
 1. **Accuracy**: The ratio of correctly predicted instances to the total instances.
    ```python
    from sklearn.metrics import accuracy_score
@@ -139,17 +149,46 @@ We evaluated the model's performance using the following methods (the metrics ar
    plt.ylabel('True Labels')
    plt.show()
    ```
+
+### Visualizations
+
+**All charts are on the bottom**
+
+### 1. Decision Tree Example (Random Forest only)
+This visualization displays one of the 100 decision trees in our random forest model, an ensemble learning method based on tree structures. By visualizing a single tree, we gain insights into selecting an optimal `max_depth` for the entire forest. The example shown here is limited to a `max_depth` of 7 for readability, helping us observe how decisions are structured within each tree in the forest.
+
+### 2. Feature Importance (Random Forest + Logistic Regression)
+Feature importance helps us understand the contribution of each feature to the predictions. Scikit-learn’s random forest model inherently stores feature importance scores, as the method assigns weights to each feature based on its impact on decision-making. In our analysis, we identified that the top two features influencing the model were **profit through bets** and **odds to win**. This was intriguing as betting metrics appeared to have the most significant impact on the game’s outcome.
+
+### 3. Model Accuracy Bar Graph (Random Forest only)
+A bar graph displaying model accuracy serves as a straightforward visual of our accuracy metric, which is a single scalar value. This visualization is useful for comparing our model’s accuracy against other models when stacked, providing an intuitive look at overall model performance.
+
+### 4. Confusion Matrix (Random Forest + Logistic Regression)
+The confusion matrix visualizes hits and misses between classes, helping us understand areas where our model performs well and where it may fall short. From this matrix, we noticed that the model perfectly predicts **class 0** features, with no missed predictions—a sign of potential overfitting. Recognizing this pattern allows us to address overfitting in future model iterations.
+
+### 5. Classification Report (Random Forest + Logistic Regression)
+The classification report presents precision, recall, and F1-score metrics for each class as a heat map. This format allows us to compare key metrics across classes visually, making it easier to identify disparities in performance and areas that may need tuning.
+
+### 6. ROC Curve (Logistic Regression only)
+The ROC curve plots the tradeoff between the true positive and false positive rates for a classification model. The AUC metrics within an ROC curve (area under the curve) for each class helps us analyze the performance of the model at class level granularity. AUC values closer to 1 (perfect classification), such as our AUCs of 0.84 and 0.85, are better than an AUC value of 0.50, which represents random guessing.
+### 7. Precision - Recall Curve (Logistic Regression only)
+The Precision - Recall (or PR) curve plots the tradeoff between the precision and recall for a classification model. Precision is the metric related to minimizing false positives, while recall is related to predicting as many true positives as possible. This plot helps balance these 2 metrics for a holistically accurate model.
+
 ## Charts
 
+Random Forest:
 ![IMG_0172](IMG_0172.png)
 ![IMG_0526](IMG_0526.png)
 ![IMG_0848](IMG_0848.png)
 ![IMG_3488](IMG_3488.png)
 ![IMG_8899](IMG_8899.png)
 
+Logistic Regression:
+
+
 ## Next Steps
 
-Our next steps involve implementing two additional models: one for unsupervised learning, which will be the K-Means clustering algorithm, and one for supervised learning, which will be logistic regression. These models will allow us to expand our analysis and compare performance across different learning approaches.
+Our next steps involve by tuning the hyperparameters for our models. We have a great baseline with both our unsupervised and supervised models, but we can further enhance these through strategies such as a grid search, which will allow us to find the best combination of hyperparameters for our models. We can also further experiment with more complex models, such as GB trees or SVM, which will be even more apt to working with higher dimensional data. 
 
 ## References
 
