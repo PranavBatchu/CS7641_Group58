@@ -1,4 +1,4 @@
-# Midterm Checkpoint
+# Final Checkpoint
 
 ## GitHub Repository Layout Description
 
