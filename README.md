@@ -176,10 +176,12 @@ scaled_features = scaler.fit_transform(features)
 ```
 
 - Data Selection: The features chosen for clustering were:
-  
+
+```
 team_b_shots_overall_l4_TSR (team shooting ratio over last 4 games)
 team_b_shots_average (average shots per game)
 predict_xg_overall_team_b (predicted expected goals)
+```
 
 
 #### Implementation
