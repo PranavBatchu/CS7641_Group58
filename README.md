@@ -51,22 +51,22 @@ As we mentioned in our proposal, our data was well-formatted, but we further cle
 
 ### ML Algorithms/Models Implemented
 
-For our 3 models, we implemented K-Means as our unsupervised learning method, and Random Forest and Logistic Regression for our supervised learning methods. 
-
-## RESULTS AND DISCUSSION
-
-For this final discussion, we will analyze all of these methods:
+For our 3 models, we implemented K-Means as our unsupervised learning method, and Random Forest and Logistic Regression for our supervised learning methods. Here is why we chose those models: 
 
 1) We decided to work with Random Forest as it is a powerful multiclass classifier that works well with high dimensional data (compared to simpler classifier such as logistic regression). As it is an ensemble learning method, in that is leverages an ensemble of decision trees, it handled our 29 features well to predict the 1 target value of the outcome of the game. We also chose Random Forest due to the flexibility and customizability in its implementation with the libraries that we used, specifically in terms of hyperparameters that we could set. Specifically, we experimented with the max_depth of the trees and the number of decision trees that we were using. By setting these, we could directly control the extent to which the Random Forest classifier was fitting to our data, and viewing the visualizations while adjusting the levels of these hyperparameters helped us determine the best combination for our data (that mitigated both over and under fitting).
 2) We also decided to use Logistic Regression as we were curious what a simpler classifier would do with our high dimensional data. We decided to use an L2 norm for our regularization (or penalty) function. Using ridge regression helped us make sure that coefficients never get set to 0, so that all features can contribute to the final prediction. If we used an L1 norm instead, the coefficients could be set to 0, which would mean that the final prediction would be based on a smaller number of features. The main benefit of using this Logistic Regression model is that we reduce overfitting when compared to Random Forest, as we have a simpler model and also an added benefit of regularization.
 3) 
+
+## RESULTS AND DISCUSSION
 
 ### Comparison 
 First let's compare the supervised learning methods that we chose: Random Forest and Logistic Regression. Although we obtained similar accuracies on our dataset from both of these models, these models differ in their advantages and disadvantages. Firstly, Random Forest models are complicated and expensive, while Logistic Regression is simple. Related to this, Random Forest is also less interpretable, in that it is difficult to analyze how the features are contributing to the output. On the other hand, Logistic Regression has direct coefficients that explain the relationship between a feature and the target. Also, because Logistic Regression is simple, it is less prone to overfitting. Along with being simple, Logistic Regression combats overfitting with its L1/L2 regularization. Random Forest, especially with an inefficient set of hyperparameters, is prone to overfitting due to improper tuning of factors such as tree depth. 
 
 Now let's compare these 2 supervised methods to the unsupervised method that we chose: K-Means. Firstly, these methods are similar in that they all categorize data into classes; they are all classification methods, even though K-Means utilizes clusters rather than classes. The main difference between these methods is that K-Means clusters without any target variable; it groups based on natural relationships between the features, rather than developing relationships to a target/label. This would mean that K-Means would be suitable in use cases where we have unlabeled data, and it is more appropriate for developing preliminary relationships, patterns, or trends in a dataset. Another difference between these methods is their capabilities of handling non-linear patterns in data. In this factor, K-Means is similar to Logistic Regression in that both of these methods struggle when the data has non-linear relationships. K-Means struggles as the distance formula is Euclidean distance (in 2D), and the clusters are also forced to be circular, while Logistic Regression struggles as the basic assumption is a linear relationship between the features and the log of the target. On the other hand, Random Forest handles non-linear relationships well as it can divide the feature space in many different ways due to how it branches based on features.
 
-### Further Analysis for Preparation of the Supervised Models:
+### Analysis:
+
+### Random Forest/Logistic Regression Analysis:  
 
 #### Preprocessing
 1. **Standardization**: We standardized the features using `StandardScaler` to ensure that all features have a mean of 0 and a standard deviation of 1. This is crucial for models like SVM which are sensitive to the scale of input data.
@@ -155,6 +155,8 @@ We evaluated the models' performance using the following methods (the metrics ar
    plt.ylabel('True Labels')
    plt.show()
    ```
+
+### K-Means Analysis: 
 
 ### Visualizations
 
