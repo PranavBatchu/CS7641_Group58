@@ -190,7 +190,7 @@ Random Forest:
 ![IMG_0848](IMG_0848.png)
 ![IMG_3488](IMG_3488.png)
 ![IMG_8899](IMG_8899.png)
-![IMG 1] (Supervised/Logistic%20Regression%20Visualizations/ClassificationReport.png)
+![IMG 1](Supervised/Logistic%20Regression%20Visualizations/ClassificationReport.png)
 
 Logistic Regression:
 
