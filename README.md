@@ -12,7 +12,9 @@ Descriptions for the key components of our repository:
 
 **/data_preprocessing.ipynb** - Data Preprocessing notebook
 
-**/kmeans.ipynb** - K-Means Method notebook
+**/kmeans/** - Folder for K-Means model notebooks + visualizations
+
+**/kmeans/kmeans.ipynb** - K-Means Method notebook
 
 **/train_dataset_preprocessed.csv** - training dataset, produced from data notebook
 
@@ -21,7 +23,7 @@ Descriptions for the key components of our repository:
 
 ## INTRODUCTION
 
-The problem we are trying ot solve is the unpredictability of sports betting on soccer games. We aim to solve this problem by leveraging ML to create a model that predicts the outcome of soccer matches. Our ultimate goal is that this model will serve as a useful tool for sports betting on soccer.
+The problem we are trying to solve is the unpredictability of sports betting on soccer games. We aim to solve this problem by leveraging ML to create a model that predicts the outcome of soccer matches. Our ultimate goal is that this model will serve as a useful tool for sports betting on soccer.
 
 ### Literature Review
 The application of machine learning (ML) in sports analytics, particularly in soccer, has garnered significant attention in recent years. Various studies have explored predictive modeling techniques to forecast match outcomes, leveraging historical data and advanced algorithms (Krutikov, Meltsov & Strabykin, 2022). One paper utilized logistic regression models to analyze team performance metrics, revealing that specific statistics, such as possession and shots on target, are strong predictors of match results. Another proposed a hybrid model combining ensemble learning and neural networks to improve the prediction of soccer match outcomes (Mun et al., 2023). Despite these advancements, many models still struggle with the inherent unpredictability of sports events, which can be influenced by unpredictable factors like referee decisions, player behavior, and real-time game dynamics (Letu 2022). 
