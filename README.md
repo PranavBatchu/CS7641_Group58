@@ -184,7 +184,7 @@ The Precision - Recall (or PR) curve plots the tradeoff between the precision an
 
 ## Charts
 
-Random Forest:
+### Random Forest:
 ![IMG_0172](IMG_0172.png)
 ![IMG_0526](IMG_0526.png)
 ![IMG_0848](IMG_0848.png)
